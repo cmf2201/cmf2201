@@ -1508,3 +1508,166 @@ a {
   color: #e43f3f;
   text-align: justify;
 }
+
+/* Single-row card styling */
+.experience-item {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+  gap: 1rem;                 /* space between image and text */
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.experience-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,.15);
+}
+
+/* Left image (≈30%) / right text (≈70%) on desktop */
+.experience-thumb {
+  flex: 0 0 30%;
+  max-width: 30%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.experience-body {
+  flex: 1 1 70%;
+  max-width: 70%;
+}
+
+/* Tidy list spacing */
+.experience-body ul { padding-left: 1.2rem; margin-bottom: 0; }
+
+/* Tablet: soften ratio a bit if you like */
+@media (max-width: 991.98px) {
+  .experience-thumb { flex-basis: 25%; max-width: 25%; }
+  .experience-body  { flex-basis: 75%; max-width: 75%; }
+}
+
+/* Mobile: stack image above text, keep logo small */
+@media (max-width: 767.98px) {
+  .experience-item { flex-direction: column; padding: 1rem; }
+  .experience-thumb {
+    width: 96px; height: 96px; max-width: none;
+    flex: 0 0 auto; border-radius: 8px; object-fit: cover;
+  }
+  .experience-body { max-width: 100%; width: 100%; }
+}
+
+/* ===== Skills section ===== */
+.skills-section .skill-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  padding: 1.25rem 1.5rem;
+}
+
+.skills-section .skill-card-header h4 {
+  font-weight: 600;
+}
+
+.skills-section .skill-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;   /* single-line spread like the screenshot */
+  gap: 2rem;                        /* space between items */
+  flex-wrap: nowrap;                /* keep on one line for large screens */
+  overflow-x: auto;                 /* allow scroll if too many items */
+  padding-bottom: .25rem;
+}
+
+.skills-section .skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  min-width: 90px;                  /* keeps label readable */
+  text-align: center;
+}
+
+.skills-section .skill-item img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,.05));
+}
+
+.skills-section .skill-item span {
+  font-size: 0.95rem;               /* similar to display-7 scale */
+  color: #333;
+}
+
+/* Responsive: wrap neatly on smaller screens */
+@media (max-width: 991.98px) {
+  .skills-section .skill-list {
+    justify-content: flex-start;
+    flex-wrap: wrap;                /* wrap to multiple lines if needed */
+    gap: 1.25rem 2rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .skills-section .skill-item img { width: 48px; height: 48px; }
+  .skills-section .skill-item { min-width: 80px; }
+}
+/* === SKILLS section background & spacing === */
+.skills-section {
+  background-color: #f5f8fa;  /* your chosen background */
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  margin-top: 0;              /* remove external gap that creates the "white bar" */
+  border-top: none;           /* optional: remove top border line */
+}
+
+
+/* Make the container content stand out from background */
+.skills-section .container {
+  background: transparent; /* keep cards cleanly visible */
+}
+
+/* Optional: give the header extra spacing */
+/* Add spacing INSIDE instead of outside */
+.skills-section .mbr-section-head {
+  margin-top: 2rem;           /* pushes the text down a bit */
+  margin-bottom: 2rem;
+}
+
+
+/* === Education Section Styling === */
+.education-section {
+  background-color: #ffe1b0;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+}
+
+/* Card appearance */
+.education-card {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.education-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Add clear space between cards */
+.row.g-4 > [class*="col-"] {
+  display: flex;
+}
+
+/* Fine-tune list spacing */
+.education-card ul {
+  margin-bottom: 0;
+  padding-left: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .education-card {
+    margin-bottom: 1.5rem;
+  }
+}
